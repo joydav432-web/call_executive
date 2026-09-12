@@ -1,0 +1,223 @@
+/* ============================================================
+   ABOUT ME SECTION — Joydeb Kumar Portfolio
+   ============================================================ */
+
+#about {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.about-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Left — photo & mini stats */
+.about-left {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.about-photo-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about-photo-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-hero);
+}
+
+.about-photo-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.about-photo-caption {
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.about-photo-caption h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.about-photo-caption p {
+  font-size: 0.8rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+/* Quick stats */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.about-stat-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.about-stat-card:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+.about-stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.about-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Right — text content */
+.about-right {
+  flex: 1;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.about-text .highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Attributes list */
+.about-attrs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.about-attr {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.about-attr:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-glass-hover);
+  transform: translateX(6px);
+}
+
+.about-attr-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.about-attr-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-attr-info span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* Progress bars — language proficiency */
+.about-languages {
+  margin-top: 1.5rem;
+}
+
+.about-languages h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.lang-bar-item {
+  margin-bottom: 1rem;
+}
+
+.lang-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.lang-bar-track {
+  height: 6px;
+  background: var(--bg-card);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.lang-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--grad-hero);
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-photo-card img {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

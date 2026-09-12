@@ -1,0 +1,434 @@
+/* ============================================================
+   HERO SECTION — Joydeb Kumar Portfolio
+   ============================================================ */
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background mesh */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(79,142,247,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(139,92,246,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 60% 20%, rgba(34,211,238,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  pointer-events: none;
+}
+
+/* Inner layout */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Photo */
+.hero-photo-wrap {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hero-photo-ring {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.hero-photo-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--grad-hero);
+  animation: rotate-ring 6s linear infinite;
+  z-index: 0;
+}
+
+.hero-photo-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  z-index: 1;
+}
+
+.hero-photo-ring img {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  object-fit: cover;
+  z-index: 2;
+}
+
+@keyframes rotate-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Floating badges */
+.hero-badge {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 10;
+  animation: float-badge 3s ease-in-out infinite;
+}
+
+.hero-badge-1 {
+  top: 8%;
+  right: -20px;
+  color: var(--accent-cyan);
+  border-color: rgba(34,211,238,0.3);
+  animation-delay: 0s;
+}
+
+.hero-badge-2 {
+  bottom: 20%;
+  left: -30px;
+  color: var(--accent-purple);
+  border-color: rgba(139,92,246,0.3);
+  animation-delay: 1s;
+}
+
+.hero-badge-3 {
+  bottom: 5%;
+  right: -10px;
+  color: var(--accent-gold);
+  border-color: rgba(245,158,11,0.3);
+  animation-delay: 2s;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Text side */
+.hero-text {
+  flex: 1;
+}
+
+.hero-greeting {
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-greeting::before {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: var(--accent-cyan);
+  display: inline-block;
+}
+
+.hero-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: var(--grad-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tag {
+  background: rgba(79,142,247,0.08);
+  border: 1px solid rgba(79,142,247,0.2);
+  color: var(--accent-blue);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--accent-purple);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+/* CTA buttons */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--grad-hero);
+  color: white;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(79,142,247,0.4);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px rgba(79,142,247,0.5);
+}
+
+.btn-resume {
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-resume:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px rgba(139, 92, 246, 0.6);
+}
+
+/* Resume Modal */
+.resume-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.resume-modal.active {
+  display: flex;
+}
+
+.resume-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.resume-modal-dialog {
+  position: relative;
+  background: transparent;
+  border: none;
+  width: 100%;
+  max-width: 820px;
+  margin: 40px auto;
+  box-shadow: none;
+  z-index: 10;
+}
+
+.resume-floating-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(30, 34, 53, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  transition: var(--transition);
+  z-index: 2020;
+}
+
+.resume-floating-close:hover {
+  background: #ec4899;
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+.resume-modal-body {
+  padding: 1rem;
+  text-align: center;
+  background: transparent;
+}
+
+.resume-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.btn-download {
+  background: var(--grad-hero);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-accent);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(79,142,247,0.1);
+  border-color: var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 5;
+  animation: bounce-scroll 2s ease-in-out infinite;
+}
+
+.hero-scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+  50%       { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-greeting {
+    justify-content: center;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
+
+  .hero-tagline {
+    border-left: none;
+    border-top: 3px solid var(--accent-purple);
+    padding-left: 0;
+    padding-top: 0.75rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-photo-ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-badge-2 {
+    left: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-photo-ring {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+}

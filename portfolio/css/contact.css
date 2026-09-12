@@ -1,0 +1,95 @@
+/* ============================================================
+   CONTACT & FOOTER CSS — Joydeb Kumar Portfolio
+   ============================================================ */
+
+#contact {
+  background: var(--bg-primary);
+  position: relative;
+  text-align: center;
+}
+
+.contact-card {
+  background: radial-gradient(circle at top left, rgba(79, 142, 247, 0.1), var(--bg-card));
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  box-shadow: 0 10px 40px rgba(79, 142, 247, 0.15);
+}
+
+.contact-channels {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--accent-cyan);
+  background: var(--bg-glass-hover);
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+}
+
+.contact-meta {
+  text-align: left;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.contact-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.contact-item.contact-linkedin {
+  background: linear-gradient(135deg, #0077B5 0%, #0A66C2 100%);
+  border-color: #0A66C2;
+  box-shadow: 0 4px 15px rgba(10, 102, 194, 0.35);
+}
+
+.contact-item.contact-linkedin:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(10, 102, 194, 0.5);
+  border-color: #38bdf8;
+}
+
+.linkedin-badge-icon {
+  background: #ffffff;
+  color: #0A66C2;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
